@@ -1,0 +1,60 @@
+<apex:page id="P" showHeader="false" standardStylesheets="false" sidebar="false" applyHtmlTag="false" applyBodyTag="false" docType="html-5.0" lightningStylesheets="true">
+<html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" lang="en">
+<head>
+ <meta charset="utf-8" />
+ <meta http-equiv="x-ua-compatible" content="ie=edge" />
+ 
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <!-- Import the Design System style sheet -->
+ <apex:slds />
+      <script type="text/javascript">
+    var __sfdcSessionId = '{!GETSESSIONID()}';
+    </script>
+    <script src="../../soap/ajax/49.0/connection.js"
+          type="text/javascript"></script>
+    
+    <apex:includeScript value="{!$Resource.MyJavascriptFile}"/>
+</head>
+    
+    <div class="slds-scope">
+    <apex:pageBlock id="PB">
+        <div class="slds-align_absolute-center slds-text-heading_large" style="height:5rem">
+            <h1> IT Help Desk  </h1></div>
+     
+        <apex:form id="FM">
+            <apex:pageBlockSection id="PB1">
+                
+                <apex:inputText id="empid" label="Employee ID" onblur="getdata();" onchange="Check();"  />
+                 
+            </apex:pageBlockSection>
+            
+     <div id="theDiv" class="slds-hidden">
+        <apex:pageBlockSection id="PB2" columns="2">
+            
+            <apex:outputText id="FName" label="First Name"/>
+            <apex:outputText id="LName" label="Last Name "/>
+            <apex:outputText id="Designation" label="Designation"/>
+            <apex:outputText id="Phone" label="Phone"/>
+            <apex:outputText id="Email" label="Email"/>
+            <apex:outputText id="Supervisor" label="Supervisor Name"/>
+            <apex:outputText id="FID" label="Federation ID"/>
+            <br/>
+            <apex:inputTextarea id="CDescription" label="Case Description"/>
+            <br/>
+            <apex:inputText id="Status" label="Status"/>
+            
+            <apex:inputText id="L1C" label="L1 Comments"/>
+            <apex:inputText id="L2C" label="L2 Comments"/>
+            <apex:inputText id="L3C" label="L3 Comments"/>
+          
+            <apex:commandButton title="Submit" value="Submit" onclick="createCase();"/>
+          
+                                                                         
+                                                                                    
+        </apex:pageBlockSection>
+             </div>     
+        </apex:form>
+    </apex:pageBlock>
+    </div>
+        </html>
+</apex:page>
